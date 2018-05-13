@@ -7,8 +7,10 @@ $update = $Config->checkUpdate();
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width,initial-scale=1" /> 
-    <title>eZ Server Monitor - <?php echo Misc::getHostname(); ?></title>
+    <title>Server Monitor - <?php echo Misc::getHostname(); ?></title>
     <link rel="stylesheet" href="web/css/utilities.css" type="text/css">
     <link rel="stylesheet" href="web/css/frontend.css" type="text/css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -43,20 +45,6 @@ $update = $Config->checkUpdate();
 <body class="theme-<?php echo $Config->get('esm:theme'); ?>">
 
 <nav role="main">
-    <div id="appname">
-        <a href="index.php"><span class="icon-gauge"></span>eSM</a>
-        <a href="<?php echo $Config->get('esm:website'); ?>"><span class="subtitle">eZ Server Monitor - v<?php echo $Config->get('esm:version'); ?></span></a>
-    </div>
-
-    <div id="hostname">
-        <?php
-        if ($Config->get('esm:custom_title') != '')
-            echo $Config->get('esm:custom_title');
-        else
-            echo Misc::getHostname().' - '.Misc::getLanIP();
-        ?>
-    </div>
-
     <?php if (!is_null($update)): ?>
         <div id="update">
             <a href="<?php echo $update['fullpath']; ?>">New version available (<?php echo $update['availableVersion']; ?>) ! Click here to download</a>
@@ -310,70 +298,6 @@ $update = $Config->checkUpdate();
             </table>
         </div>
     </div>
-
-
-    <div class="cls"></div>
-
-
-    <div class="t-center">
-        <div class="box column-left column-33" id="esm-last_login">
-            <div class="box-header">
-                <h1>Last login</h1>
-                <ul>
-                    <li><a href="#" class="reload" onclick="esm.reloadBlock('last_login');"><span class="icon-cycle"></span></a></li>
-                </ul>
-            </div>
-
-            <div class="box-content">
-                <?php if ($Config->get('last_login:enable') == true): ?>
-                    <table>
-                        <tbody></tbody>
-                    </table>
-                <?php else: ?>
-                    <p>Disabled</p>
-                <?php endif; ?>
-            </div>
-        </div>
-
-
-
-        <div class="box column-right column-33" id="esm-services">
-            <div class="box-header">
-                <h1>Services status</h1>
-                <ul>
-                    <li><a href="#" class="reload" onclick="esm.reloadBlock('services');"><span class="icon-cycle"></span></a></li>
-                </ul>
-            </div>
-
-            <div class="box-content">
-                <table>
-                    <tbody></tbody>
-                </table>
-            </div>
-        </div>
-
-
-
-
-        <div class="box t-center" style="margin: 0 33%;" id="esm-ping">
-            <div class="box-header">
-                <h1>Ping</h1>
-                <ul>
-                    <li><a href="#" class="reload" onclick="esm.reloadBlock('ping');"><span class="icon-cycle"></span></a></li>
-                </ul>
-            </div>
-
-            <div class="box-content">
-                <table>
-                    <tbody></tbody>
-                </table>
-            </div>
-        </div>
-
-    </div>
-
-    
-
     <div class="cls"></div>
 
 </div>

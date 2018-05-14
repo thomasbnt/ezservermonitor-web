@@ -2,16 +2,16 @@
     "esm": {
         "version": "2.5",
         "website": "http://www.ezservermonitor.com",
-        "check_updates": true,
-        "auto_refresh": 0,
-        "theme": "blue",
+        "check_updates": false,
+        "auto_refresh": 30,
+        "theme": "red",
         "custom_title": ""
     },
     "cpu": {
         "enable_temperature": true
     },
     "disk": {
-        "show_tmpfs": false,
+        "show_tmpfs": true,
         "show_filesystem": true,
         "ignore_mounts": []
     },
@@ -23,11 +23,11 @@
         ]
     },
     "last_login": {
-        "enable": true,
+        "enable": false,
         "max": 5
     },
     "services": {
-        "show_port": true,
+        "show_port": false,
         "list": [
             {
                 "name": "Web Server",

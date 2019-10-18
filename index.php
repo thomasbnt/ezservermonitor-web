@@ -91,10 +91,6 @@ $update = $Config->checkUpdate();
                         <td id="system-last_boot"></td>
                     </tr>
                     <tr>
-                        <td>Current user(s)</td>
-                        <td id="system-current_users"></td>
-                    </tr>
-                    <tr>
                         <td>Server date & time</td>
                         <td id="system-server_date"></td>
                     </tr>

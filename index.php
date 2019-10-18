@@ -169,35 +169,7 @@ $update = $Config->checkUpdate();
         </div>
     </div>
 
-
-
-    <div class="box column-left" id="esm-network">
-        <div class="box-header">
-            <h1>Network usage</h1>
-            <ul>
-                <li><a href="#" class="reload" onclick="esm.reloadBlock('network');"><span class="icon-cycle"></span></a></li>
-            </ul>
-        </div>
-
-        <div class="box-content">
-            <table>
-                <thead>
-                    <tr>
-                        <th class="w15p">Interface</th>
-                        <th class="w20p">IP</th>
-                        <th>Receive</th>
-                        <th>Transmit</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
-    </div>
-
-
     <div class="cls"></div>
-
-
 
     <div class="box" id="esm-disk">
         <div class="box-header">

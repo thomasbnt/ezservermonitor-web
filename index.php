@@ -45,12 +45,14 @@ $update = $Config->checkUpdate();
 <body class="theme-<?php echo $Config->get('esm:theme'); ?>">
 
 <nav role="main">
-    <?php if (!is_null($update)): ?>
-        <div id="update">
-            <a href="<?php echo $update['fullpath']; ?>">New version available (<?php echo $update['availableVersion']; ?>) ! Click here to download</a>
-        </div>
-    <?php endif; ?>
-
+    <div id="hostname">
+        <?php
+        if ($Config->get('esm:custom_title') != '')
+            echo $Config->get('esm:custom_title');
+        else
+            echo Misc::getHostname()
+        ?>
+    </div>
     <ul>
         <li><a href="#" class="reload" onclick="esm.reloadBlock('all');"><span class="icon-cycle"></span></a></li>
     </ul>
